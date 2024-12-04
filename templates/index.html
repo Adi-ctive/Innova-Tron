@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innova-Tron: Your AI transcript and language partner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-iKbYAdfF5FeYYGLm95oj5JX8v50r2wHw4mkFvQzqth1zCZpD/yTkEo3MOA+u4Kzj" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            position: relative;
+            background-image: url('static/bg.jpg'); /* Corrected static image reference */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-in-out;
+            max-width: 700px;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.25rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            background-color: #f0f4f8;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            z-index: 1;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .features {
+            margin-top: 50px;
+            background-color: #e9ecef;
+            padding: 30px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .features h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .features p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: left;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 1.5s infinite;
+            color: #ffffff;
+            font-size: 2rem;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn-primary {
+                font-size: 1rem;
+            }
+            .content h2 {
+                font-size: 2rem;
+            }
+            .features h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Welcome to Innova-Tron</h1>
+        <p>Innova-Tron is an AI service Initiative taken up by students to solve the problems of language barriers for non-native speakers travelling outside their native place for education , work and other purposes. This service is specifically targeted for the people involved in education which allows the user to trancribe and translate any audio or visual format of language into their desirable language in real time so that it can be easily interpreted and understood.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-arrow-down"></i></a>
+        </div>
+    </div>
+
+    <div class="content" id="about">
+        <h2>About Innova-Tron</h2>
+        <p>Innova-Tron is Developed specifically using the Intel AI libraries involving multilingual translations models and their respective datasets. This allows for an Innovative solution to the barriers faced by people outside their native language environments.</p>
+        <p>this aims to bridge the gap between traditional teaching methods and modern educational needs.</p>
+        <p>Through its interactive features and adaptive learning capabilities, Innova-Tron not only Transcribes and Translates in Real-Time but also provides image reading, and source generation of any topic being discussed to allow user to quickly access notes while studying. Meanwhikle this platform also collaorates the use of apis like the unooficial duolingo api to allow user to learn the non-native language in the process so that learning can be made even more easier! </p>
+    </div>
+
+    <div class="features">
+        <h3>Key Features of Innova-Tron</h3>
+        <p><strong>Adaptive Learning:</strong> Innova-Tron uses machine learning algorithms to analyze student's learning/understanding to adjust the transcription and source generation accordingly.</p>
+        <p><strong>Interactive Interface:</strong> The platform engages students through interactive UI, Dashboard, and feedback, making learning fun and effective.</p>
+        <p><strong>24/7 Availability:</strong> Innova-Tron's service is always ready to assist students, providing support and Translation queries at any time.</p>
+        <p><strong>Real-time Progress Tracking:</strong>Students can also keep records of their transcribed notes and always come back to check out there important study highlights</p>
+        <p><strong>Inclusivity:</strong> Designed to cater to diverse learning needs, Innova-Tron allows any Language speaker to sit alongside completely other speakers and still feel included thus removing communication bridges.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
